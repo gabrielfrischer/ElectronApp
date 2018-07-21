@@ -1,0 +1,89 @@
+<html>
+<title></title>
+<header>
+
+
+
+
+
+  
+    <script src="node_modules\jquery\dist\jquery.js" onload="window.$ = window.jQuery = module.exports;"></script>
+
+<script src="node_modules\bootstrap\dist\js\bootstrap\bootstrap.bundle.js" type="javascript/text"></script>
+<link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.css">
+<script src="login.js" type="javascript/text"></script>
+
+
+<script>
+$(function(){
+    
+
+$("#username").keyup(function(){
+console.log($("#username").val().length);
+    if ($("#username").val().length >= 6 && $("#password").val().length >= 6)
+    {
+        $("#submitbutton").removeAttr("disabled");
+    }
+    else if ($("#username").val().length <= 6 || $("#password").val().length <= 6)
+    {
+        $("#submitbutton").attr("disabled","disabled");
+    }
+})
+
+
+$("#password").keyup(function(){
+console.log($("#username").val().length);
+    if ($("#username").val().length >= 6 && $("#password").val().length >= 6)
+    {
+      $("#submitbutton").removeAttr("disabled");
+    }
+    else if ($("#username").val().length <= 6 || $("#password").val().length <= 6)
+    {
+        $("#submitbutton").attr("disabled","disabled");
+    }
+
+})
+
+});
+
+
+</script>
+
+
+
+</header>
+
+
+
+<body>
+
+
+<div class="container" style="border:1px black solid; width:500px;background-color:rgb(131, 99, 173);border-radius:3px; margin-top:190px;">
+
+<div class="row">
+    <div class="col"><img src = "Pictures/instagramlogo.png"  style="display:block;margin:auto;width:50%;height:auto;" /></div>
+</div>
+
+
+<div class="row">
+    <div class="col" style="text-align:center;padding-top:10px;"><input type="text" id="username" name="username" placeholder="Username" style="text-align:center;width:60%"/></div>
+</div>
+<div class="row">
+        <div class="col" style="text-align:center;padding-top:20px;"><input type="password" id="password" name="password" placeholder="Password" style="text-align:center;width:60%"/></div>
+    </div>
+
+<div class="row">
+    <div class="col" style="text-align: center;padding:2%;padding-top:3%;">
+            <button onclick="login();" class="btn btn-primary" id="submitbutton" disabled style="width:125px" value="LogIn"/>LogIn</button></div>
+    </div>
+
+</div>
+
+
+</form>
+
+</body>
+
+
+
+</html>
